@@ -13,7 +13,6 @@ dependencies:
 test:
   pre:
     - bundle exec rubocop
-  pre:
     - bundle exec rails_best_practices
 
 database:
