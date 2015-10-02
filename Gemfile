@@ -23,11 +23,11 @@ group :development, :test do
   gem 'rubocop'
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rails_best_practices', require: false
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'better_errors'
-  gem 'rails_best_practices', require: false
 end
