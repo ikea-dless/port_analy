@@ -1,0 +1,21 @@
+machine:
+  environment:
+    RAILS_ENV: test
+  ruby:
+    version: 2.2.3
+
+dependencies:
+  cache_directories:
+    - "vendor/bundle"
+  override:
+    - bundle -j4 --path=vendor/bundle --without development production
+
+test:
+  pre:
+    - bundle exec rubocop
+  pre:
+    - bundle exec rails_best_practices
+
+database:
+  override:
+    - bundle exec rake db:create db:migrate db:seed --trace
