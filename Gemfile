@@ -26,6 +26,12 @@ group :development, :test do
   gem 'rails_best_practices', require: false
 end
 
+group :test do
+  gem 'codecov', require: false
+  gem 'minitest'
+  gem 'minitest-reporters'
+end
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
