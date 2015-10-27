@@ -2,8 +2,8 @@ require 'test_helper'
 
 class ProfileTest < ActiveSupport::TestCase
   def setup
-    @profile = profiles(:ikeda)
-    @non_image_profile = profiles(:non_image_ikeda)
+    @profile = profiles(:one)
+    @non_image_profile = profiles(:non_image)
   end
 
   test 'プロフィールが存在している' do

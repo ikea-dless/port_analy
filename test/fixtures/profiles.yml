@@ -1,10 +1,10 @@
-ikeda:
+one:
   name: takahiro ikeda
   department: 1
-  user_id: <%= User.last.id %>
+  user: one
 
-non_image_ikeda:
+non_image:
   name: ikeda non image
   department: 1
   image_url: https://avatars2.githubusercontent.com/u/6467972?v=3&s=460
-  user_id: <%= User.last.id %>
+  user: two

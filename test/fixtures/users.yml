@@ -1,3 +1,7 @@
-ikeda:
+one:
   email: ikeadless@gmail.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+two:
+  email: hoge@hoge.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
