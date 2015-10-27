@@ -3,7 +3,7 @@ class CreateProfiles < ActiveRecord::Migration
     create_table :profiles do |t|
       t.string :name, null: false
       t.string :image_url
-      t.integer :deparment, null: false
+      t.integer :department, null: false
       t.references :user, index: true, foreign_key: true, null: false
 
       t.timestamps null: false
