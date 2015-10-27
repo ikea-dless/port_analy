@@ -1,7 +1,10 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+ikeda:
+  name: takahiro ikeda
+  department: 1
+  user_id: <%= User.last.id %>
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+non_image_ikeda:
+  name: ikeda non image
+  department: 1
+  image_url: https://avatars2.githubusercontent.com/u/6467972?v=3&s=460
+  user_id: <%= User.last.id %>
