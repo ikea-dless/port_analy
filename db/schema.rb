@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20151013132620) do
 
   create_table "activities", force: :cascade do |t|
-    t.text     "text",       limit: 65535
+    t.text     "text",       limit: 65535, null: false
     t.integer  "user_id",    limit: 4,     null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -23,16 +23,16 @@ ActiveRecord::Schema.define(version: 20151013132620) do
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
 
   create_table "kit_dictionaries", force: :cascade do |t|
-    t.string   "word",         limit: 255
-    t.string   "introduction", limit: 255
+    t.string   "word",         limit: 255, null: false
+    t.string   "introduction", limit: 255, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name",       limit: 255, null: false
     t.string   "image_url",  limit: 255
-    t.integer  "deparment",  limit: 4
+    t.integer  "deparment",  limit: 4,   null: false
     t.integer  "user_id",    limit: 4,   null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
