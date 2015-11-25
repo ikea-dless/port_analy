@@ -1,0 +1,5 @@
+- if @activity.blank?
+  = 'アクティビティがありません。'
+- else
+  %h1= @activity.user.email << 'のアクティビティ'
+  = @activity.text
