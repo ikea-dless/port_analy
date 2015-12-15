@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'therubyracer'
 gem 'haml-rails'
 gem 'devise'
+gem 'kuromoji'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
