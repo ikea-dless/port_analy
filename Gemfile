@@ -14,6 +14,7 @@ gem 'therubyracer'
 gem 'haml-rails'
 gem 'devise'
 gem 'kuromoji'
+gem 'semantic-ui-sass'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
