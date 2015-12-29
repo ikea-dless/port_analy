@@ -1,0 +1,20 @@
+.ui.middle.aligned.center.aligned.grid
+  .column
+    %h2.ui.teal.image.header ログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ui form'}) do |f|
+      .field
+        .ui.left.icon.input
+          %i.user.icon
+          = f.email_field :email, autofocus: true, placeholder: 'メールアドレス'
+      .field
+        .ui.left.icon.input
+          %i.lock.icon
+          = f.password_field :password, autocomplete: "off", placeholder: 'パスワード'
+      - if devise_mapping.rememberable?
+        .field
+          .ui.checkbox
+            = f.check_box :remember_me
+            %label ログイン状態を保存する
+      = f.submit 'ログイン', class: 'ui fluid large teal submit button'
+    .ui.message
+      = render "users/shared/links"

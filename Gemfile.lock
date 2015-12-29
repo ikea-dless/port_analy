@@ -95,8 +95,8 @@ GEM
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.7.0)
-    jbuilder (2.3.2)
-      activesupport (>= 3.0.0, < 5)
+    jbuilder (2.4.0)
+      activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
@@ -252,10 +252,10 @@ DEPENDENCIES
   better_errors
   byebug
   codecov
-  coffee-rails (~> 4.1.0)
+  coffee-rails
   devise
   haml-rails
-  jbuilder (~> 2.0)
+  jbuilder
   jquery-rails
   kuromoji
   minitest
@@ -263,17 +263,17 @@ DEPENDENCIES
   mysql2
   pry-byebug
   pry-rails
-  rails (= 4.2.5)
+  rails
   rails_best_practices
   rubocop
-  sass-rails (~> 5.0)
+  sass-rails
   sdoc (~> 0.4.0)
   semantic-ui-sass
   spring
   therubyracer
   thin
   turbolinks
-  uglifier (>= 1.3.0)
+  uglifier
   web-console (~> 2.0)
 
 BUNDLED WITH
