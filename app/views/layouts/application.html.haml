@@ -7,4 +7,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    %header
+      .ui.menu.fixed
+        .ui.header.item
+          ぽーとあなりぃ
+    .ui.container{style: 'margin-top: 70px'}
+      = yield
