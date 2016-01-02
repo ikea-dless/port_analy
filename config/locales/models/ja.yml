@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      profile: プロフィール
+      kit_dictionary: KIT辞書
+    attributes:
+      user:
+        created_at: 登録日時
+        updated_at: 更新日時
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+      profile:
+        name: プロフィール名
+        department: 学科
+      kit_dictionary:
+        word: 単語
+        introduction: 説明文

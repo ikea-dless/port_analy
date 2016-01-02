@@ -6,6 +6,7 @@ module Analy
   include JavaIterator
   @tokenizer = Tokenizer.builder.userDictionary(Rails.root.join('config', 'dictionaries', 'kit.txt').to_s).build
   def self.tokenize(sentence)
+    sentence = '' if sentence.nil?
     words = []
     list = @tokenizer.tokenize(sentence)
     list.extend JavaIterator
@@ -13,6 +14,6 @@ module Analy
       next unless x.isUser
       words.push(x.surface_form)
     end
-    words
+    words.uniq
   end
 end

@@ -1,8 +1,8 @@
 .ui.middle.aligned.center.aligned.grid
   .column
+    = devise_error_messages!
     %h2.ui.teal.image.header Sign up
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'ui form'}) do |f|
-      = devise_error_messages!
       .field
         .ui.left.icon.input
           %i.user.icon

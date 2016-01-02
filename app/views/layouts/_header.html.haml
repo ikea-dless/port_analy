@@ -1,0 +1,10 @@
+.ui.menu.top.fixed
+  = link_to 'ぽーとあなりぃ', root_path, class: 'item', style: 'color: #21BA45 !important'
+  - if user_signed_in?
+    = link_to 'プロフィール', user_profile_path(current_user), class: 'item'
+    = link_to '自己PR文', user_activity_path(current_user), class: 'item'
+  .right.menu
+    .item
+      = form_tag search_path, method: :get, class: 'ui transparent left icon input' do
+        = text_field_tag :query, '', placeholder: 'キーワード検索'
+        %i.search.icon

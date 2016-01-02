@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :authenticate_user!, except: :show
+
   def create
     @activity = current_user.build_activity(activity_params)
     if @activity.save
@@ -11,7 +12,8 @@ class ActivitiesController < ApplicationController
   end
 
   def edit
-    @activity = Activity.find_by_user_id(current_user)
+    @activity = Activity.find_by(user_id: current_user)
+    redirect_to new_user_activity_path if @activity.nil?
   end
 
   def index
@@ -30,13 +32,14 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.find_or_initialize_by(user_id: current_user)
+    redirect_to edit_user_activity_path unless @activity.nil?
   end
 
   def destroy
   end
 
   def show
-    @activity ||= Activity.find_by(id: params[:id])
+    @activity = Activity.find_by(id: params[:id])
   end
 
   private
