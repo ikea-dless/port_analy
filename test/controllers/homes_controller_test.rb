@@ -1,3 +1,4 @@
+=begin
 require 'test_helper'
 
 class HomesControllerTest < ActionController::TestCase
@@ -6,3 +7,4 @@ class HomesControllerTest < ActionController::TestCase
     assert_response :success
   end
 end
+=end

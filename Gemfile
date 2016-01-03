@@ -25,6 +25,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rails_best_practices', require: false
+  gem 'brakeman', require: false
 end
 
 group :test do

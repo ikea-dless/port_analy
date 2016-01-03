@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_one :profile
   has_one :activity
+  delegate :name, to: :profile
+  delegate :department, to: :profile
 end
