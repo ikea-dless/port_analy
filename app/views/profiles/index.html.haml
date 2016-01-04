@@ -1,2 +1,11 @@
-%h1 Profiles#index
-%p Find me in app/views/profiles/index.html.haml
+.ui.card
+  .image
+    = gravatar_for(current_user)
+  .content
+    .header= current_user.name
+    .meta= 'Joined in ' << current_user.created_at.strftime('%Y/%m/%d')
+  .extra.content
+    %i.university.icon
+    %span= DEPARTMENTS[current_user.department]
+    .right.floated
+      = link_to '編集', edit_user_profile_path, class: 'ui green basic button'

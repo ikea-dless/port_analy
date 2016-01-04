@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_action :authenticate_user!, only: :profile_exist?
+  before_action :profile_exist?
+
+  private
+
+  def profile_exist?
+    profile = Profile.find_by(user_id: current_user)
+    redirect_to new_user_profile_path(current_user), flash: { alert: 'プロフィールを入力してください' } if profile.blank?
+  end
 end

@@ -1,0 +1,8 @@
+- if obj.errors.any?
+  .ui.error.message
+    %i.close.icon
+    .header
+      = "#{obj.errors.count}件のエラーがあります"
+    %ul
+      - obj.errors.full_messages.each do |msg|
+        %li= msg

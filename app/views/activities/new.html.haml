@@ -1,4 +1,8 @@
-%h1 自己PR文を入力してください
-= form_for @activity, url: user_activity_path do |f|
-  = f.text_area :text, size: '150x30'
-  = f.submit
+= render partial: 'shared/error_messages', locals: {obj: @activity}
+
+%h1.ui.dividing.header 自己PR文を入力してください
+%p 金沢工業大学に関する情報を抽出して、自動で注釈を追加します。
+= form_for @activity, url: user_activity_path, html: {class: 'ui form'} do |f|
+  .field
+    = f.text_area :text, style: 'height: 300px'
+  = f.submit class: 'ui right floated large green button'

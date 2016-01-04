@@ -1,13 +1,15 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
+    %meta{name: 'viewport', content: 'width=device-width,initial-scale=1'}/
     %title PortAnaly
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
-    %header
-      = render '/shared/header'
-    .ui.container{style: 'margin-top: 70px'}
+  %header
+    = render 'layouts/header'
+  %body{style: 'padding-top: 90px'}
+    .ui.container
+      = render 'layouts/message'
       = yield
