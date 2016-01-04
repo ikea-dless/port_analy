@@ -2,4 +2,5 @@
   .ui.header
     自分のPR文
   = @activity.text
-  = link_to '編集', edit_user_activity_path, class: 'ui right floated basic green button'
+  = link_to '確認する', activity_path(@activity), class: 'ui right floated basic blue button', style: 'margin-top: 6px'
+  = link_to '編集', edit_user_activity_path, class: 'ui right floated basic green button', style: 'margin-top: 6px'

@@ -15,5 +15,5 @@
         = link_to 'Login', new_user_session_path, class: 'ui green button'
     .item
       = form_tag search_path, method: :get, class: 'ui transparent left icon input' do
-        = text_field_tag :query, '', placeholder: 'キーワード検索'
+        = text_field_tag :q, '', placeholder: 'キーワード検索'
         %i.search.icon

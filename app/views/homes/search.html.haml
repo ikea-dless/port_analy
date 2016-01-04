@@ -1,3 +1,20 @@
-- @activities.each do |activity|
-  = activity.text
-  = activity.user.name
+.ui.message
+  %i.search.icon
+  = url_for(params[:q]) << "に該当する検索結果は#{(@activities.empty?) ? 'ありませんでした' : @activities.count.to_s << '件です'}"
+  %i.close.icon
+
+.ui.special.cards
+  - @activities.each do |activity|
+    .ui.card
+      .blurring.dimmable.image
+        .ui.dimmer
+          .content
+            .center
+              = link_to 'PRを見る', activity_path(activity), class: 'ui green inverted button'
+        = gravatar_for(activity.user)
+      .content
+        .header= activity.user.name
+        .meta= 'Joined in ' << activity.user.created_at.strftime('%Y/%m/%d')
+      .extra.content
+        %i.university.icon
+        %span= DEPARTMENTS[activity.user.department]
