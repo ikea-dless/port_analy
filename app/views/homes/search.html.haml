@@ -1,3 +1,23 @@
-- @activities.each do |activity|
-  = activity.text
-  = activity.user.name
+.ui.message
+  %i.search.icon
+  - if @activities.empty?
+    = url_for(params[:q]) << "に該当する検索結果はありませんでした。"
+  - else
+    = url_for(params[:q]) << "に該当する検索結果は#{@activities.count}件です。"
+  %i.close.icon
+
+.ui.special.cards
+  - @activities.each do |activity|
+    .ui.card
+      .blurring.dimmable.image
+        .ui.dimmer
+          .content
+            .center
+              = link_to 'PRを見る', activity_path(activity), class: 'ui green inverted button'
+        = gravatar_for(activity.user)
+      .content
+        .header= activity.user.name
+        .meta= 'Latest update ' << activity.created_at.strftime('%Y/%m/%d')
+      .extra.content
+        %i.university.icon
+        %span= DEPARTMENTS[activity.user.department]
