@@ -3,7 +3,7 @@
   - if @activities.empty?
     = url_for(params[:q]) << "に該当する検索結果はありませんでした。"
   - else
-    = "に該当する検索結果は#{@activities.count}件です。"
+    = url_for(params[:q]) << "に該当する検索結果は#{@activities.count}件です。"
   %i.close.icon
 
 .ui.special.cards
