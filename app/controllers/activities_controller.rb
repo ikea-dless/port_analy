@@ -4,27 +4,26 @@ class ActivitiesController < ApplicationController
   def create
     @activity = current_user.build_activity(activity_params)
     if @activity.save
-      flash[:success] = '保存しました'
-      redirect_to user_activity_path
+      redirect_to user_activity_path, flash: { success: '保存しました' }
     else
       render 'new'
     end
   end
 
   def edit
-    @activity = Activity.find_by(user_id: current_user)
-    redirect_to new_user_activity_path if @activity.nil?
+    @activity = Activity.find_or_initialize_by(user_id: current_user)
+    redirect_to new_user_activity_path unless @activity.text
   end
 
   def index
-    @activity = Activity.find_by_user_id(current_user)
-    redirect_to new_user_activity_path if @activity.blank?
+    @activity = Activity.find_or_initialize_by(user_id: current_user)
+    redirect_to new_user_activity_path unless @activity.text
   end
 
   def update
-    if current_user.activity.update(activity_params)
-      flash[:notice] = '保存しました'
-      redirect_to user_activity_path
+    @activity = Activity.find_by(user_id: current_user)
+    if @activity.update_attributes(activity_params)
+      redirect_to user_activity_path, flash: { success: '更新しました' }
     else
       render 'edit'
     end
@@ -32,7 +31,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.find_or_initialize_by(user_id: current_user)
-    redirect_to edit_user_activity_path unless @activity.nil?
+    redirect_to edit_user_activity_path if @activity.text
   end
 
   def destroy

@@ -1,5 +1,7 @@
+= render partial: 'shared/error_messages', locals: {obj: @activity}
+
 %h1 自己PR文を入力してください
 = form_for @activity, url: user_activity_path, html: {class: 'ui form'} do |f|
   .field
     = f.text_area :text, style: 'height: 300px'
-  = f.submit '更新する', class: 'ui right floated large green button'
+  = f.submit class: 'ui right floated large green button'

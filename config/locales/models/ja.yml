@@ -4,6 +4,7 @@ ja:
       user: ユーザー
       profile: プロフィール
       kit_dictionary: KIT辞書
+      activity: PR文
     attributes:
       user:
         created_at: 登録日時
@@ -17,3 +18,5 @@ ja:
       kit_dictionary:
         word: 単語
         introduction: 説明文
+      activity:
+        text: 文章

@@ -1,2 +1,10 @@
-%h1 Profiles#edit
-%p Find me in app/views/profiles/edit.html.haml
+= render partial: 'shared/error_messages', locals: {obj: @profile}
+
+= form_for @profile, url: user_profile_path, html: {class: 'ui form'} do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :department
+    = f.select :department, DEPARTMENTS.invert
+  = f.submit class: 'ui right floated large green button'

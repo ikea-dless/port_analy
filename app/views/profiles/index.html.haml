@@ -7,3 +7,5 @@
   .extra.content
     %i.university.icon
     %span= DEPARTMENTS[current_user.department]
+    .right.floated
+      = link_to '編集', edit_user_profile_path, class: 'ui green basic button'

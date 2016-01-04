@@ -1,7 +1,7 @@
 - if @activity.blank?
   = 'アクティビティがありません。'
 - else
-  .ui.segment#ac
+  .ui.green.segment.clearing#ac
     .ui.header
       = @activity.user.name << 'のPR文'
     = @activity.text
