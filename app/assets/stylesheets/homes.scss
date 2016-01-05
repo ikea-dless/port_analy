@@ -1,3 +1,37 @@
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#main .masthead {
+  min-height: 550px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  .secondary.menu {
+    border-color: transparent;
+    .button {
+      position: relative;
+      top: 0em;
+      margin: -0.5em 0em;
+      padding-bottom: 0.71428571em;
+      padding-top: 0.71428571em;
+      font-size: 1.2em;
+    }
+  }
+  .following.bar {
+    position: fixed;
+    top: 0px;
+    z-index: 900;
+    left: 0%;
+    padding: 2em 0em;
+    width: 100%;
+    box-shadow: 0px 0px 0px 0px transparent;
+    border-bottom: 1px solid transparent;
+    transition: padding 0.5s ease, background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+    .menu .item {
+      transition: all 0.5s ease;
+    }
+  }
+  .light.following.bar {
+    padding: 1em 0em;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #DDDDDD;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.04);
+  }
+}
