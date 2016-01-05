@@ -1,3 +1,67 @@
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#main .masthead {
+  min-height: 550px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  //padding-top: 1em;
+  //color: rgba(255, 255, 255, 0.9);
+  //margin-bottom: 0px;
+  //border-bottom: none;
+  //background-color: #000000;
+  //background-position: 50% 50%;
+  //-webkit-transform: translate3d(0, 0, 0);
+  //transform: translate3d(0, 0, 0);
+  //&:after {
+  //  position: absolute;
+  //  top: 0px;
+  //  left: 0px;
+  //  z-index: -1;
+  //  width: 100%;
+  //  height: 100%;
+  //  content: '';
+  //  background-size: cover;
+  //  opacity: 0.45;
+  //  background-image: url("/images/background.jpg");
+  //  -ms-transition:
+  //          background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+  //          opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s;
+  //  -moz-transition:
+  //          background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+  //          opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s;
+  //  -webkit-transition:
+  //          background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,
+  //          opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s;
+  //  transition:     background 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s,     opacity 6s cubic-bezier(0.680, -0.550, 0.265, 1.4) 0s;
+  //}
+  .secondary.menu {
+    border-color: transparent;
+    .button {
+      position: relative;
+      top: 0em;
+      margin: -0.5em 0em;
+      padding-bottom: 0.71428571em;
+      padding-top: 0.71428571em;
+      font-size: 1.2em;
+    }
+  }
+  .following.bar {
+    position: fixed;
+    top: 0px;
+    z-index: 900;
+    left: 0%;
+    padding: 2em 0em;
+    width: 100%;
+    box-shadow: 0px 0px 0px 0px transparent;
+    border-bottom: 1px solid transparent;
+    transition: padding 0.5s ease, background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+    .menu .item {
+      transition: all 0.5s ease;
+    }
+  }
+  .light.following.bar {
+    padding: 1em 0em;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #DDDDDD;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.04);
+  }
+}

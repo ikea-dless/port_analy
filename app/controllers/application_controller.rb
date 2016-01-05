@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :authenticate_user!, only: :profile_exist?
-  before_action :profile_exist?
+  before_action :profile_exist?, if: :user_signed_in?
 
   private
 

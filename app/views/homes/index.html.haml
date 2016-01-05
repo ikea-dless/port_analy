@@ -1,2 +1,68 @@
-%h1 Homes#index
-%p Find me in app/views/homes/index.html.haml
+!!!
+%html
+  %head
+    %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
+    %meta{name: 'viewport', content: 'width=device-width,initial-scale=1'}/
+    %title 工大生による工大生のための工大生のポートフォリオ | ぽーとあなりぃ
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body.pushable#main
+    .pusher
+      .ui.inverted.vertical.masthead.center.aligned.segment
+        .following.bar
+          .ui.container
+            .ui.secondary.inverted.pointing.menu
+              = link_to 'ぽーとあなりぃ', root_path, class: 'active item'
+              - if user_signed_in?
+                = link_to user_profile_path(current_user), class: 'item' do
+                  %i.ui.user.icon
+                  プロフィール
+                = link_to user_activity_path(current_user), class: 'item' do
+                  %i.ui.write.icon
+                  自己PR文
+              .right.item.inverted
+                = link_to 'Login', new_user_session_path, class: 'ui green inverted button'
+                = link_to 'Signup', new_user_registration_path, class: 'ui blue inverted button', style: 'margin-left: 0.5em'
+        .ui.text.container
+          %h1.ui.inverted.header{style: 'margin-top: 4em; font-size: 3em'} ぽーとあなりぃ
+          %h2 自己PRのストレスからあなたを開放します
+          = link_to new_user_registration_path, class: 'ui huge primary button' do
+            はじめる
+            %i.right.arrow.icon
+      .ui.vertical.stripe.segment{style: 'padding: 8em 0em'}
+        .ui.middle.aligned.stackable.grid.container
+          .row
+            .eight.wide.column
+              %h3.ui.header{style: 'font-size: 2em'} 自己PRの文章を入力します
+              %p{style: 'font-size: 1.3em; word-wrap: break-word'} 自分の所属している部活や、プロジェクトの名前を文章に含めながら入力します。
+              %h3.ui.header{style: 'font-size: 2em'} 文章を解析します
+              %p{style: 'font-size: 1.3em; word-wrap: break-word'} 入力された内容から金沢工業大学に関する単語を抽出して、ぽーとあなりぃが説明を自動で付与します。もう余計な説明をする必要がありません。
+            .six.wide.right.floated.column
+              = image_tag('demo.png')
+      .ui.vertical.stripe.quote.segment
+        .ui.equal.width.stackable.internally.celled.grid
+          .center.aligned.row
+            .column{style: 'padding-top: 5em; padding-bottom: 5em'}
+              %h3{style: 'font-size: 2em'} キーワード検索
+              %p{style: 'font-size: 1.3em'} 自己PRをキーワードによる検索が可能です。共通点のある人を探すこともできます。
+            .column{style: 'padding-top: 5em; padding-bottom: 5em'}
+              %h3{style: 'font-size: 2em'} リンクを共有
+              %p{style: 'font-size: 1.3em'} 自分のPR文は常に公開されています。リンクを送るだけで誰でも閲覧することができます。
+      .ui.inverted.vertical.footer.segment{style: 'padding: 4em 0em'}
+        .ui.container.center.aligned
+          .ui.stackable.inverted.divided.equal.height.stackable.grid
+            .five.wide.column
+              %h4.ui.inverted.header Powered by
+              .ui.inverted.link.list
+                %a{href: 'http://github.com/ikea-dless', class: 'item', target: '_blank'} Takahiro Ikeda
+                %a{href: 'http://github.com/daiki8', class: 'item', target: '_blank'} Daiki Tsukahara
+            .five.wide.column
+              %h4.ui.inverted.header ぽーとあなりぃについて
+              %p このプロジェクトはオープンソースで公開されています。
+            .five.wide.column
+              %h4.ui.inverted.header{style: 'text-align: right'} &nbsp;
+              %a{href: 'https://twitter.com/share', class: 'twitter-share-button', 'data-hashtags': 'ぽーとあなりぃ', 'data-lang': 'ja'} Tweet
+              %script
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+              %iframe{src: 'https://ghbtns.com/github-btn.html?user=ikea-dless&repo=port_analy&type=star&count=true', frameborder: '0', scrolling: '0', width: '170px', height: '20px'}
