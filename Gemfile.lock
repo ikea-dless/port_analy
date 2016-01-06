@@ -117,6 +117,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kgio (2.10.0)
     kuromoji (0.0.1)
       rjb
     libv8 (3.16.14.13)
@@ -187,6 +188,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
+    raindrops (0.15.0)
     rake (10.4.2)
     rdoc (4.2.1)
       json (~> 1.4)
@@ -259,6 +261,10 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (5.0.1)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     url (0.3.2)
     warden (1.2.4)
       rack (>= 1.0)
@@ -298,6 +304,7 @@ DEPENDENCIES
   thin
   turbolinks
   uglifier
+  unicorn
   web-console (~> 2.0)
 
 BUNDLED WITH

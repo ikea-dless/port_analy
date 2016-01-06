@@ -15,6 +15,6 @@ test:
 
 production:
   <<: *default
-  database: port_analy_production
+  database: port_analy
   username: port_analy
   password: <%= ENV['PORT_ANALY_DATABASE_PASSWORD'] %>
